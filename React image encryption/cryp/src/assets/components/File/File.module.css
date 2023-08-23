@@ -1,0 +1,82 @@
+.image{
+    margin-top: 32%;
+    margin-left: -5.1%;
+    justify-self: left;
+    background: rgb(103, 112, 83);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    display: grid;
+    display: inline-block;
+    grid-template-columns: auto;
+    position: absolute; 
+
+}
+
+.enc{
+    background-color: aliceblue;
+    padding: 8rem 8rem;
+    margin-bottom: 4rem;
+}
+
+
+.dec{
+    background-color: aliceblue;
+    padding: 8rem 8rem;
+    margin-bottom: 4rem;
+}
+.but{
+    width: 6rem;
+    height: 3rem;
+    margin-right: 5px;
+    margin-top: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    align-items: center;
+    background-color: aqua;
+}
+.but :hover{
+    cursor: pointer;
+}
+.but1{
+    width: 6rem;
+    height: 3rem;
+    margin-right: 5px;
+    margin-top: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    align-items: center;
+    background-color: rgb(255, 3, 3);
+}
+.but1 :hover{
+    cursor: pointer;
+}
+
+@media (max-width: 450px) and (max-width: 768px) {
+    .image{
+        margin-top: 62rem;
+        width: auto;
+        position: absolute;
+    
+    }
+    .enc{
+        width: auto;
+        height: 17rem;
+    }
+    input.encpass{
+        width: 60px;
+    }
+    .dec{
+        width: auto;
+        height: 17rem;
+    }
+    .but{
+        width: 300px;
+    }
+    .but1{
+        width: 300px;
+    }
+
+    
+}
