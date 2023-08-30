@@ -5,20 +5,20 @@
     margin-top: 10px;
     margin-bottom: 5px;
   }
-  
+
   .page{
-    height: 100vh;
-    background-color: aliceblue;
+    height: 110vh;
+    background-color: rgb(67, 70, 73);
     display:relative;
     align-items: center;
     justify-content: center;
-    width: 31.1rem;
-    margin-left: -4.2rem;
+    width: 41.39rem;
+    margin-left: -4.25rem;
     margin-bottom: 69rem;
-  
+
   }
 
-  
+
   div.encryption{
     font-family: 'Courier New', monospace;
     font-size: 40px;
@@ -31,10 +31,10 @@
  
   .container{
     height: 300px;
-    width: 300px;
+    width: 280px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.5);
-    margin-left: 6rem;
+    margin-left: 12rem;
     
   }
   .heading{
@@ -43,20 +43,23 @@
     margin-top: 1rem;
     font-weight: bold;
     font-size: 30px;
+    margin-left: ;
     
   }
   .img-holder{
     margin: auto;
     width: 250px;
-    height: 350px;
+    height: 348px;
     border: 3px black solid;
     border-radius: 5px;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
   .img{
-    width: 250px;
-    height: 350px;
+    width: 280px;
+    height: 370px;
     object-fit: cover;
+    margin-top: -1rem;
+    margin-left: -15px;
   }
   #input[type="file"] {
       display: none;
@@ -70,7 +73,7 @@
   .image-upload{
     margin: auto;
     width: 200px;
-    height: 60px;
+    height: 65px;
     color: white;
     border-radius: 10px;
     background-color: black;
@@ -86,6 +89,10 @@
     display: inline;
   }
 
+  .up{
+    background-color: #4a555c;
+    border-color:black ;
+  }
   @media (max-width: 450px) and (max-width: 768px) {
     .page{
       height: 80vh;
@@ -118,14 +125,95 @@
       text-align: center;
       margin-left: 4rem;
     }
-    
+
     *{
       width: 12rem;  
       height: px;
       margin-right: 0.5rem;
       margin-top: -6px;
       margin-bottom: 20px;
-      
+
   }
   }
   
+  @media (max-width: 768px) {
+    * {
+      width: 12rem;
+      height: px;
+      margin-right: 0.5rem;
+      margin-top: -6px;
+      margin-bottom: 20px;
+    }
+
+    .page {
+      height: 80vh;
+      width: 30rem;
+    }
+
+    .container {
+      height: 300px;
+    }
+
+    .image-upload {
+      width: 20rem;
+      height: 3rem;
+      margin-top: 2.1rem;
+      color: rgb(250, 243, 243);
+    }
+
+    .img {
+      height: 22rem;
+      margin-top: 1px;
+    }
+
+    .img-holder {
+      height: 22rem;
+    }
+
+    .heading {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-left: 4rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    * {
+      width: 12rem;
+      height: px;
+      margin-right: 0.5rem;
+      margin-top: -6px;
+      margin-bottom: 20px;
+    }
+
+    .page {
+      height: 80vh;
+      width: 30rem;
+    }
+  
+    .container {
+      height: 300px;
+    }
+
+    .image-upload {
+      width: 20rem;
+      height: 3rem;
+      margin-top: 2.1rem;
+      color: rgb(250, 243, 243);
+    }
+
+    .img {
+      height: 22rem;
+      margin-top: 1px;
+    }
+
+    .img-holder {
+      height: 22rem;
+    }
+
+    .heading {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-left: 4rem;
+    }
+  }

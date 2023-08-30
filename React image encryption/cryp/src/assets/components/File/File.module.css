@@ -1,28 +1,52 @@
 .image{
-    margin-top: 32%;
+    margin-top: 90%;
     margin-left: -5.1%;
     justify-self: left;
-    background: rgb(103, 112, 83);
+    background: rgb(46, 46, 45);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2rem;
     display: grid;
     display: inline-block;
     grid-template-columns: auto;
-    position: absolute; 
+    position: absolute;
+
+}
+.hold{
+    margin: auto;
+    width: 400px;
+    height: 350px;
+    border: 3px black solid;
+    border-radius: 5px;
+    margin-top: 1rem;
+    
+
+}
+
+.holde{
+    margin: auto;
+    width: 400px;
+    height: 350px;
+    border: 3px black solid;
+    border-radius: 5px;
+    margin-top: 1rem;
+    
 
 }
 
 .enc{
-    background-color: aliceblue;
+    background-color: rgb(67, 70, 73);
     padding: 8rem 8rem;
     margin-bottom: 4rem;
 }
 
 
 .dec{
-    background-color: aliceblue;
+    background-color: rgb(67, 70, 73);
     padding: 8rem 8rem;
     margin-bottom: 4rem;
+}
+.tex{
+    color: white;
 }
 .but{
     width: 6rem;
@@ -33,7 +57,7 @@
     font-size: 1rem;
     font-weight: 600;
     align-items: center;
-    background-color: aqua;
+    background-color: #00ff00;
 }
 .but :hover{
     cursor: pointer;
@@ -80,3 +104,22 @@
 
     
 }
+@media (max-width: 768px) {
+    .image {
+      margin-top: 62rem;
+      width: auto;
+      position: absolute;
+    }
+    .enc,
+    .dec {
+      width: auto;
+      height: 17rem;
+    }
+    input.encpass {
+      width: 60px;
+    }
+    .but,
+    .but1 {
+      width: 300px;
+    }
+  }
