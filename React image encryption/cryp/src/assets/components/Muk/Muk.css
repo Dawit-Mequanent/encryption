@@ -1,219 +1,184 @@
-*{
-    margin: 0;
-    padding: 0;
-    z-index: 1;
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
 
-  .page{
+.page {
+  height: 110vh;
+  background-color: rgb(67, 70, 73);
+  display: relative;
+  align-items: center;
+  justify-content: center;
+  width: 41.39rem;
+  margin-left: -4.25rem;
+  margin-bottom: 69rem;
+}
+
+div.encryption {
+  font-family: 'Courier New', monospace;
+  font-size: 40px;
+  font-weight: bolder;
+  color: #00FF00;
+  animation: matrix 2s linear infinite;
+}
+
+.container {
+  height: 300px;
+  width: 280px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: 12rem;
+}
+
+.heading {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.img-holder {
+  margin: auto;
+  width: 250px;
+  height: 348px;
+  border: 3px black solid;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+}
+
+.img {
+  width: 280px;
+  height: 370px;
+  object-fit: cover;
+  margin-top: -1rem;
+  margin-left: -15px;
+}
+
+#input[type="file"] {
+  display: none;
+}
+
+.label {
+  width: 100%;
+  margin-top: 0.1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.image-upload {
+  margin: auto;
+  width: 200px;
+  height: 65px;
+  color: white;
+  border-radius: 10px;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+}
+
+.encryption {
+  color: rgb(30, 30, 31);
+  font-family: serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: -30rem;
+  display: inline;
+}
+
+.up {
+  background-color: #4a555c;
+  border-color: black;
+}
+
+@media (max-width: 450px) {
+  .page {
     height: 110vh;
-    background-color: rgb(67, 70, 73);
-    display:relative;
-    align-items: center;
-    justify-content: center;
-    width: 41.39rem;
-    margin-left: -4.25rem;
-    margin-bottom: 69rem;
-
+    width: 120%;
+    margin-left: 0rem;
   }
 
-
-  div.encryption{
-    font-family: 'Courier New', monospace;
-    font-size: 40px;
-    font-weight: bolder;
-    color: #00FF00;
-    animation: matrix 2s linear infinite;
-    
-  }
-
- 
-  .container{
+  .container {
     height: 300px;
-    width: 280px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    margin-left: 12rem;
-    
-  }
-  .heading{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 1rem;
-    font-weight: bold;
-    font-size: 30px;
-    margin-left: ;
-    
-  }
-  .img-holder{
-    margin: auto;
-    width: 250px;
-    height: 348px;
-    border: 3px black solid;
-    border-radius: 5px;
-    margin-top: 1.5rem;
-  }
-  .img{
-    width: 280px;
-    height: 370px;
-    object-fit: cover;
-    margin-top: -1rem;
-    margin-left: -15px;
-  }
-  #input[type="file"] {
-      display: none;
-  }
-  .label{
-    width: 100%;
-    margin-top: 0.1rem;
-    display: flex;
-    justify-content: center;
-  }
-  .image-upload{
-    margin: auto;
-    width: 200px;
-    height: 65px;
-    color: white;
-    border-radius: 10px;
-    background-color: black;
-    text-align: center;
-    cursor: pointer;
-  }
-  .encryption {
-    color: rgb(30, 30, 31);
-    font-family: serif;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-top: -30rem;
-    display: inline;
   }
 
+  .image-upload {
+    width: 20rem;
+    height: 3rem;
+    margin-top: 0rem;
+    color: rgb(250, 243, 243);
+  }
+
+  .img {
+    height: 23rem;
+    margin-top: -3px;
+  }
+
+  .img-holder {
+    height: 22rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-left: 4rem;
+  }
+
+  * {
+    width: 12rem;
+    height: px;
+    margin-right: 0.5rem;
+    margin-top: -6px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 786px) {
+  .page {
+    height: 110vh;
+    width: 120%;
+    margin-left: 0rem;
+  }
+
+  .container {
+    height: 300px;
+  }
+
+  .image-upload {
+    width: 20rem;
+    height: 5rem;
+    margin-top: 0rem;
+    color: rgb(250, 243, 243);
+  }
   .up{
-    background-color: #4a555c;
-    border-color:black ;
-  }
-  @media (max-width: 450px) and (max-width: 768px) {
-    .page{
-      height: 80vh;
-      width: 30rem;
-      
-     
-    
-    }
-    .container{
-      height: 300px;
-      
-      
-    }
-    .image-upload{
-      width: 20rem;
-      height: 3rem;
-      margin-top:2.1rem;
-      color: rgb(250, 243, 243);
-      
-    }
-    .img{
-      height: 22rem;
-      margin-top: 1px;
-    }
-    .img-holder{
-      height: 22rem;
-    }
-    .heading{
-      font-size: 1.5rem;
-      text-align: center;
-      margin-left: 4rem;
-    }
-
-    *{
-      width: 12rem;  
-      height: px;
-      margin-right: 0.5rem;
-      margin-top: -6px;
-      margin-bottom: 20px;
-
-  }
-  }
-  
-  @media (max-width: 768px) {
-    * {
-      width: 12rem;
-      height: px;
-      margin-right: 0.5rem;
-      margin-top: -6px;
-      margin-bottom: 20px;
-    }
-
-    .page {
-      height: 80vh;
-      width: 30rem;
-    }
-
-    .container {
-      height: 300px;
-    }
-
-    .image-upload {
-      width: 20rem;
-      height: 3rem;
-      margin-top: 2.1rem;
-      color: rgb(250, 243, 243);
-    }
-
-    .img {
-      height: 22rem;
-      margin-top: 1px;
-    }
-
-    .img-holder {
-      height: 22rem;
-    }
-
-    .heading {
-      font-size: 1.5rem;
-      text-align: center;
-      margin-left: 4rem;
-    }
+    margin-top: 3px;
+    margin-left: 2px;
+    height: 5rem;
   }
 
-  @media (max-width: 768px) {
-    * {
-      width: 12rem;
-      height: px;
-      margin-right: 0.5rem;
-      margin-top: -6px;
-      margin-bottom: 20px;
-    }
-
-    .page {
-      height: 80vh;
-      width: 30rem;
-    }
-  
-    .container {
-      height: 300px;
-    }
-
-    .image-upload {
-      width: 20rem;
-      height: 3rem;
-      margin-top: 2.1rem;
-      color: rgb(250, 243, 243);
-    }
-
-    .img {
-      height: 22rem;
-      margin-top: 1px;
-    }
-
-    .img-holder {
-      height: 22rem;
-    }
-
-    .heading {
-      font-size: 1.5rem;
-      text-align: center;
-      margin-left: 4rem;
-    }
+  .img {
+    height: 23rem;
+    margin-top: -3px;
   }
+
+  .img-holder {
+    height: 22rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-left: 4rem;
+  }
+
+  * {
+    width: 12rem;
+    height: px;
+    margin-right: 0.5rem;
+    margin-top: -6px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Muk.css';
+import axios from 'axios';
 
 export class Muk extends Component {
   state = {
@@ -27,13 +28,9 @@ export class Muk extends Component {
     const formData = new FormData();
     formData.append('image', selectedImage);
 
-    fetch('http://localhost:5000/encryption', {
-      method: 'POST',
-      body: formData
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Image uploaded:', data);
+    axios.post('http://localhost:5000/encryption', formData)
+      .then((response) => {
+        console.log('Image uploaded:', response.data);
       })
       .catch((error) => {
         console.error('Error:', error);

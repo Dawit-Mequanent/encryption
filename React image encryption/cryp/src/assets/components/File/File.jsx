@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import css from '../File/file.module.css';
+import axios from 'axios';
 
 const File = () => {
   const [encryptedImage, setEncryptedImage] = useState(null);
@@ -32,13 +33,9 @@ const File = () => {
     formData.append('file', file);
     formData.append('password', password);
 
-    fetch('/encryption', {
-      method: 'POST',
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const encryptedImageData = data.encryptedImage;
+    axios.post('/encryption', formData)
+      .then((response) => {
+        const encryptedImageData = response.data.encryptedImage;
         setEncryptedImage(encryptedImageData);
       })
       .catch((error) => {
@@ -51,13 +48,9 @@ const File = () => {
     formData.append('file', file);
     formData.append('password', password);
 
-    fetch('/decryption', {
-      method: 'POST',
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const decryptedImageData = data.decryptedImage;
+    axios.post('/decryption', formData)
+      .then((response) => {
+        const decryptedImageData = response.data.decryptedImage;
         setDecryptedImage(decryptedImageData);
       })
       .catch((error) => {
@@ -67,11 +60,10 @@ const File = () => {
 
   return (
     <div className={css.image}>
-      <div className={css.enc}>
+        <div className={css.enc}>
         <div className={css.tex}>Encrypted File</div>
         <div className={css.holde}>
-          {encryptedImage && <img src={encryptedImage}
-           alt="" className={css.encryptedImage} />}
+          {encryptedImage && <img src={encryptedImage} alt="" className={css.encryptedImage} />}
         </div>
       </div>
       <input

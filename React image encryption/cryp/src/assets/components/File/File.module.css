@@ -77,17 +77,14 @@
     cursor: pointer;
 }
 
-@media (max-width: 450px) and (max-width: 768px) {
+@media (max-width: 450px) {
     .image{
         margin-top: 62rem;
         width: auto;
         position: absolute;
     
     }
-    .enc{
-        width: auto;
-        height: 17rem;
-    }
+   
     input.encpass{
         width: 60px;
     }
@@ -104,16 +101,20 @@
 
     
 }
-@media (max-width: 768px) {
+@media (max-width: 450px) {
     .image {
       margin-top: 62rem;
-      width: auto;
-      position: absolute;
+      width: 44.8rem;
+      margin-left: -30px;
+      
+      
     }
     .enc,
     .dec {
-      width: auto;
+      width: 26.7rem;
       height: 17rem;
+      margin-left: 1.7rem;
+      margin-top: 2px;
     }
     input.encpass {
       width: 60px;
@@ -122,4 +123,74 @@
     .but1 {
       width: 300px;
     }
+    .holde{
+        margin-top: -18rem;
+    }
+    .hold{
+        margin-top: -18rem;
+    }
+    .tex{
+        margin-bottom: 10rem;
+        margin-left: 24.4rem;
+    
+    }
   }
+
+  @media (min-width: 450px) and (max-width: 786px) {
+    .image {
+      margin-top: 62rem;
+      width: 44.8rem;
+      margin-left: -30px;
+      
+      
+    }
+    .enc,
+    .dec {
+      width: 26.7rem;
+      height: 17rem;
+      margin-left: 1.7rem;
+      margin-top: 2px;
+    }
+    input.encpass {
+      width: 60px;
+    }
+    .but,
+    .but1 {
+      width: 300px;
+    }
+    .holde{
+        margin-top: -18rem;
+    }
+    .hold{
+        margin-top: -18rem;
+    }
+    .tex{
+        margin-bottom: 10rem;
+        margin-left: 24.4rem;
+    
+    }
+  }
+  @media (min-width: 450px) and (max-width: 786px) {
+    .image{
+        margin-top: 62rem;
+        width: auto;
+        position: absolute;
+    
+    }
+    
+    input.encpass{
+        width: 60px;
+    }
+    .dec{
+        width: auto;
+        height: 17rem;
+    }
+    .but{
+        width: 300px;
+    }
+    .but1{
+        width: 300px;
+    }
+
+    
+}

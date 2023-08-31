@@ -54,3 +54,14 @@
     height: 100%;
   }
 }
+
+@media (min-width: 450px) and (max-width: 786px) {
+  #root{
+    width: 50rem;
+    height: 100%;
+  }
+  #body{
+    width: 50rem;
+    height: 100%;
+  }
+}
