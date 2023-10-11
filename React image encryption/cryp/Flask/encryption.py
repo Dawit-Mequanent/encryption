@@ -1,25 +1,31 @@
+from flask import Flask, request
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
 from base64 import b64encode
 
+app = Flask(__name__)
 
-def encrypt(file_name, key):
-    with open(file_name, 'rb') as entry:
-        data = entry.read()
-        cipher = AES.new(key, AES.MODE_CFB)
-        ciphertext = cipher.encrypt(pad(data, AES.block_size))
-        iv = b64encode(cipher.iv).decode('UTF-8')
-        ciphertext = b64encode(ciphertext).decode('UTF-8')
-        to_write = iv + ciphertext
+@app.route('/encryption', methods=['POST'])
+def handle_encryption():
+    # Get the uploaded file and key from the form data
+    uploaded_file = request.files['file']
+    key = request.form['key']
 
-    with open(file_name + '.enc', 'w') as data:
-        data.write(to_write)
+    # Read the file data
+    file_data = uploaded_file.read()
+    # Encrypt the file data
+    cipher = AES.new(key.encode('utf-8'), AES.MODE_CFB)
+    ciphertext = cipher.encrypt(pad(file_data, AES.block_size))
+    iv = b64encode(cipher.iv).decode('utf-8')
+    ciphertext = b64encode(ciphertext).decode('utf-8')
+    encrypted_data = iv + ciphertext
 
-    print('Encryption successful!')
+    # Save the encrypted data to a new file
+    encrypted_file_path = uploaded_file.filename + '.enc'
+    with open(encrypted_file_path, 'wb') as encrypted_file: 
+        encrypted_file.write(encrypted_data.encode('utf-8'))
 
-password = input('Please insert your password: ')
-key = password.encode('UTF-8')
-key = pad(key, AES.block_size)
+    return 'File encrypted and saved as ' + encrypted_file_path
 
-file_name = input('Please enter the file name: ')
-encrypt(file_name, key)
+if __name__ == '__main__':
+    app.run()

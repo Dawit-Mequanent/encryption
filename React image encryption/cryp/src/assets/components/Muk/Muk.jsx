@@ -1,25 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Muk.css';
 import axios from 'axios';
 
-export class Muk extends Component {
-  state = {
-    profileImg: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
-    selectedImage: null
-  };
+function Muk() {
+  const [profileImg, setProfileImg] = React.useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
+  const [selectedImage, setSelectedImage] = React.useState(null);
 
-  imageHandler = (e) => {
+  const imageHandler = (e) => {
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.readyState === 2) {
-        this.setState({ profileImg: reader.result, selectedImage: e.target.files[0] });
+        setProfileImg(reader.result);
+        setSelectedImage(e.target.files[0]);
       }
     };
     reader.readAsDataURL(e.target.files[0]);
   };
 
-  uploadImage = () => {
-    const { selectedImage } = this.state;
+  const uploadImage = () => {
     if (!selectedImage) {
       console.log('No image selected');
       return;
@@ -37,29 +35,27 @@ export class Muk extends Component {
       });
   };
 
-  render() {
-    const { profileImg } = this.state;
-    return (
-      <div className="page">
-        <div className="encryption">Image Encryption</div>
-        <div className="container">
-          <h1 className="heading">Add your Image</h1>
-          <div className="img-holder">
-            <img src={profileImg} alt="" id="img" className="img" />
-          </div>
-          <input type="file" accept="image/*" name="image-upload" id="input" onChange={this.imageHandler} />
-          <div className="label">
-            <label className="image-upload" htmlFor="input">
-              <i className="material-icons"></i>
-              Choose your Photo Here
-            </label>
-            <button onClick={this.uploadImage} className='up'>Upload Image</button>
-          </div>
+  return (
+    <div className="page">
+      <div className="encryption">Image Encryption</div>
+      <div className="container">
+        <h1 className="heading">Add your Image</h1>
+        <div className="img-holder">
+          <img src={profileImg} alt="" id="img" className="img" />
         </div>
-        <div></div>
+        <input type="file" accept="image/*" name="image-upload" id="input" onChange={imageHandler} />
+        <div className="label">
+          <label className="image-upload" htmlFor="input">
+            <i className="material-icons"></i>
+            Choose your Photo Here
+          </label>
+          <button onClick={uploadImage} className='up'>Upload Image</button>
+        </div>
       </div>
-    );
-  }
+      <div></div>
+    </div>
+  );
 }
 
 export default Muk;
+

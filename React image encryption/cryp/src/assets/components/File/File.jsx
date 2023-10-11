@@ -10,13 +10,13 @@ const File = () => {
 
   const handleEncryptedSubmit = () => {
     const password = encryptionPassword;
-    const file = 'image.jpg'; 
-    encrypt(file, password);
+    const file = 'image.jpg';
+    encryptImage(file, password);
   };
 
   const handleDecryptedSubmit = () => {
     const password = decryptionPassword;
-    const file = 'image.jpg.enc'; 
+    const file = 'image.jpg.enc';
     decrypt(file, password);
   };
 
@@ -28,12 +28,14 @@ const File = () => {
     setDecryptionPassword(e.target.value);
   };
 
-  const encrypt = (file, password) => {
+  const encryptImage = (file, password) => {
     const formData = new FormData();
     formData.append('file', file);
     formData.append('password', password);
 
-    axios.post('/encryption', formData)
+  const x = 20;
+
+    axios.post('http://localhost:5000/encryption', x)
       .then((response) => {
         const encryptedImageData = response.data.encryptedImage;
         setEncryptedImage(encryptedImageData);
@@ -48,10 +50,9 @@ const File = () => {
     formData.append('file', file);
     formData.append('password', password);
 
-    axios.post('/decryption', formData)
-      .then((response) => {
-        const decryptedImageData = response.data.decryptedImage;
-        setDecryptedImage(decryptedImageData);
+    axios.post('http://localhost:5000/decryption', formData)
+      .then(() => {
+        console.log('Decryption successful!');
       })
       .catch((error) => {
         console.error('Decryption failed:', error);
@@ -59,7 +60,9 @@ const File = () => {
   };
 
   return (
+    
     <div className={css.image}>
+      
         <div className={css.enc}>
         <div className={css.tex}>Encrypted File</div>
         <div className={css.holde}>
@@ -73,8 +76,9 @@ const File = () => {
         onChange={handleEncryptionPasswordChange}
       />
       <input type="submit" value="Encrypt" className={css.but1} onClick={handleEncryptedSubmit} />
-
+      
       <div className={css.dec}>
+      
         <div className={css.tex}>Decrypted Image</div>
         <div className={css.hold}>
           {decryptedImage && <img src={decryptedImage} alt="" className={css.decryptedImage} />}
@@ -88,7 +92,9 @@ const File = () => {
         onChange={handleDecryptionPasswordChange}
       />
       <input type="submit" value="Decrypt" className={css.but} onClick={handleDecryptedSubmit} />
+      <div className={css.lertsign}></div>
     </div>
+      
   );
 };
 

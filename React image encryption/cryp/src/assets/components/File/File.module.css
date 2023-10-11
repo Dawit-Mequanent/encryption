@@ -77,6 +77,34 @@
     cursor: pointer;
 }
 
+.alertsign {
+    width: 9rem;
+    height: 9rem;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    animation: alert-blink 1s infinite;
+    margin-top: -7.6rem;
+    margin-left: 30rem;
+  }
+  
+  .alertsign::before {
+    content: "!";
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes alert-blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
 @media (max-width: 450px) {
     .image{
         margin-top: 62rem;
