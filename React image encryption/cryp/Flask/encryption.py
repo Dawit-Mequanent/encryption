@@ -2,8 +2,11 @@ from flask import Flask, request
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
 from base64 import b64encode
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+CORS(app)
 
 @app.route('/encryption', methods=['POST'])
 def handle_encryption():
@@ -11,6 +14,8 @@ def handle_encryption():
     uploaded_file = request.files['file']
     key = request.form['key']
 
+    print(f"File: {uploaded_file.filename}")
+    print(f"Key: {key}")
     # Read the file data
     file_data = uploaded_file.read()
     # Encrypt the file data
